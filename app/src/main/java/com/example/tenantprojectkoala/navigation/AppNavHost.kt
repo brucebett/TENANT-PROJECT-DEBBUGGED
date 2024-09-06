@@ -63,11 +63,11 @@ NavHost(navController = navController, startDestination = startDestination) {
             gradient = Brush.horizontalGradient(colors = listOf(Blue, Green))
         ) {} }
 
-    composable(ROUTE_HOME_TENANT){ HomeTenant()}
+    composable(ROUTE_HOME_TENANT){ HomeTenant(navController = navController)}
 
-    composable(ROUTE_HOME_LANDLORD){ HomeLandlord()}
+    composable(ROUTE_HOME_LANDLORD){ HomeLandlord(navController = navController)}
 
-    composable(ROUTE_UPLOAD_HOUSE){ UploadHouses() }
+    composable(ROUTE_UPLOAD_HOUSE){ UploadHouses(navController = navController) }
 
     composable(ROUTE_VIEW_HOUSES){ ViewHouses()}
 

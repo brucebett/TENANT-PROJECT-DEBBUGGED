@@ -105,8 +105,7 @@ fun HomeLandlord(navController: NavController) {
                 .padding(10.dp)
                 .fillMaxWidth()
         ){
-//            ConstraintLayout{
-//            }
+
             Box (modifier = Modifier
                 .fillMaxWidth()
                 .height(245.dp)
@@ -161,7 +160,7 @@ fun HomeLandlord(navController: NavController) {
                 label = { Text(text = "Search for...") },
                 trailingIcon = {
                     Image(
-                        painter = painterResource(id = R.drawable.search_24),
+                        painter = painterResource(id = R.drawable.searchimg),
                         contentDescription = null,
                         modifier = Modifier
                             .size(43.dp)
@@ -222,18 +221,18 @@ fun HomeLandlord(navController: NavController) {
                         ),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ){
-                        Image(painter = painterResource(id = R.drawable.edit_24),
+                        Image(painter = painterResource(id = R.drawable.uploadimg),
                             contentDescription = null,
                             modifier = Modifier
                                 .padding(top = 3.dp,)
                                 .size(50.dp)
                                 .clickable { navController.navigate(ROUTE_EDIT_HOUSE) }
                         )
-                        Text(text = "Edit Houses",
+                        Text(text = "EditHouses",
                             fontSize = 14.sp,
                             fontWeight = FontWeight.Bold,
-                            fontStyle = FontStyle.Italic,
-                            color = Color.Magenta
+                            fontStyle = FontStyle.Normal,
+                            color = Color.Black
                         )
                     }
 
@@ -247,7 +246,7 @@ fun HomeLandlord(navController: NavController) {
                         ),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ){
-                        Image(painter = painterResource(id = R.drawable.upload_24),
+                        Image(painter = painterResource(id = R.drawable.upload),
                             contentDescription = null,
                             modifier = Modifier
                                 .padding(top = 3.dp,)
@@ -257,8 +256,8 @@ fun HomeLandlord(navController: NavController) {
                         Text(text = "Upload ",
                             fontSize = 14.sp,
                             fontWeight = FontWeight.Bold,
-                            fontStyle = FontStyle.Italic,
-                            color = Color.Magenta
+                            fontStyle = FontStyle.Normal,
+                            color = Color.Black
                         )
                     }
 
@@ -272,7 +271,7 @@ fun HomeLandlord(navController: NavController) {
                         ),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ){
-                        Image(painter = painterResource(id = R.drawable.home_24),
+                        Image(painter = painterResource(id = R.drawable.home1),
                             contentDescription = null,
                             modifier = Modifier
                                 .padding(top = 3.dp,)
@@ -283,8 +282,8 @@ fun HomeLandlord(navController: NavController) {
                         Text(text = "Home",
                             fontSize = 14.sp,
                             fontWeight = FontWeight.Bold,
-                            fontStyle = FontStyle.Italic,
-                            color = Color.Magenta
+                            fontStyle = FontStyle.Normal,
+                            color = Color.Black
                         )
                     }
                 }
@@ -299,17 +298,17 @@ fun HomeLandlord(navController: NavController) {
                         ),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ){
-                        Image(painter = painterResource(id = R.drawable.info_24),
+                        Image(painter = painterResource(id = R.drawable.settings),
                             contentDescription = null,
                             modifier = Modifier
                                 .padding(top = 3.dp,)
                                 .size(50.dp)
                         )
-                        Text(text = "Info",
+                        Text(text = "Settings",
                             fontSize = 14.sp,
                             fontWeight = FontWeight.Bold,
-                            fontStyle = FontStyle.Italic,
-                            color = Color.Magenta
+                            fontStyle = FontStyle.Normal,
+                            color = Color.Black
                         )
                     }
 
@@ -323,17 +322,17 @@ fun HomeLandlord(navController: NavController) {
                         ),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ){
-                        Image(painter = painterResource(id = R.drawable.problem_24),
+                        Image(painter = painterResource(id = R.drawable.profile1),
                             contentDescription = null,
                             modifier = Modifier
                                 .padding(top = 3.dp,)
                                 .size(50.dp)
                         )
-                        Text(text = "Problem ",
+                        Text(text = "Support ",
                             fontSize = 14.sp,
                             fontWeight = FontWeight.Bold,
-                            fontStyle = FontStyle.Italic,
-                            color = Color.Magenta
+                            fontStyle = FontStyle.Normal,
+                            color = Color.Black
                         )
                     }
 
@@ -347,17 +346,17 @@ fun HomeLandlord(navController: NavController) {
                         ),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ){
-                        Image(painter = painterResource(id = R.drawable.logout_24),
+                        Image(painter = painterResource(id = R.drawable.profile),
                             contentDescription = null,
                             modifier = Modifier
                                 .padding(top = 3.dp,)
                                 .size(50.dp)
                         )
-                        Text(text = "Log Out",
+                        Text(text = "Profile",
                             fontSize = 14.sp,
                             fontWeight = FontWeight.Bold,
-                            fontStyle = FontStyle.Italic,
-                            color = Color.Magenta
+                            fontStyle = FontStyle.Normal,
+                            color = Color.Black
                         )
                     }
                 }
@@ -372,17 +371,17 @@ fun HomeLandlord(navController: NavController) {
                         ),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ){
-                        Image(painter = painterResource(id = R.drawable.edit_24),
+                        Image(painter = painterResource(id = R.drawable.notification1),
                             contentDescription = null,
                             modifier = Modifier
                                 .padding(top = 3.dp,)
                                 .size(50.dp)
                         )
-                        Text(text = "Edit Houses",
+                        Text(text = "Notifications",
                             fontSize = 14.sp,
                             fontWeight = FontWeight.Bold,
-                            fontStyle = FontStyle.Italic,
-                            color = Color.Magenta
+                            fontStyle = FontStyle.Normal,
+                            color = Color.Black
                         )
                     }
 
@@ -396,17 +395,17 @@ fun HomeLandlord(navController: NavController) {
                         ),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ){
-                        Image(painter = painterResource(id = R.drawable.upload_24),
+                        Image(painter = painterResource(id = R.drawable.measege),
                             contentDescription = null,
                             modifier = Modifier
                                 .padding(top = 3.dp,)
                                 .size(50.dp)
                         )
-                        Text(text = "Upload ",
+                        Text(text = "Messages",
                             fontSize = 14.sp,
                             fontWeight = FontWeight.Bold,
-                            fontStyle = FontStyle.Italic,
-                            color = Color.Magenta
+                            fontStyle = FontStyle.Normal,
+                            color = Color.Black
                         )
                     }
 
@@ -420,7 +419,7 @@ fun HomeLandlord(navController: NavController) {
                         ),
                         horizontalAlignment = Alignment.CenterHorizontally
                     ){
-                        Image(painter = painterResource(id = R.drawable.logout_24),
+                        Image(painter = painterResource(id = R.drawable.logout1),
                             contentDescription = null,
                             modifier = Modifier
                                 .padding(top = 3.dp,)
@@ -429,8 +428,8 @@ fun HomeLandlord(navController: NavController) {
                         Text(text = "Log Out",
                             fontSize = 14.sp,
                             fontWeight = FontWeight.Bold,
-                            fontStyle = FontStyle.Italic,
-                            color = Color.Magenta
+                            fontStyle = FontStyle.Normal,
+                            color = Color.Black
                         )
                     }
                 }

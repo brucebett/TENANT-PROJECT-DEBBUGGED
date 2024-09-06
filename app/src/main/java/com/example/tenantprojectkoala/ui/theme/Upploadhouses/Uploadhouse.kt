@@ -1,6 +1,7 @@
 package com.example.tenantprojectkoala.ui.theme.Upploadhouses
 
 import android.net.Uri
+import android.widget.Toast
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.Image
@@ -29,7 +30,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
-import coil.compose.rememberImagePainter
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -37,18 +37,25 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
+import coil.compose.rememberImagePainter
 import com.example.tenantprojectkoala.R
+import com.example.tenantprojectkoala.data.HouseViewModel
+import com.example.tenantprojectkoala.navigation.ROUTE_HOME_LANDLORD
+import com.example.tenantprojectkoala.navigation.ROUTE_VIEW_HOUSES
 import com.example.tenantprojectkoala.ui.theme.Blue
 import com.example.tenantprojectkoala.ui.theme.Green
 
 @Composable
-fun UploadHouses() {
+fun UploadHouses(navController: NavController) {
   val imageUri = rememberSaveable() {
     mutableStateOf<Uri?>(null)
   }
@@ -174,7 +181,7 @@ Text(text = "Upload House Details",
         modifier = Modifier
           .wrapContentWidth()
           .align(Alignment.CenterHorizontally),
-        label = { Text(text = "Optional")},
+        label = { Text(text = "Description")},
         placeholder = { Text(text = "Please Enter Brief Description")},
         value = description,
         singleLine = false,
@@ -191,15 +198,32 @@ Text(text = "Upload House Details",
           .padding(10.dp)
           .height(60.dp)
           .width(120.dp),
-          onClick = { /*TODO*/ }) {
+          onClick = { navController.navigate(ROUTE_HOME_LANDLORD) }) {
           Text(text = "Back")
         }
+        val context = LocalContext.current
         Button(modifier = Modifier
           .background(brush = Brush.horizontalGradient(colors = listOf(Green, Blue)))
           .padding(10.dp)
           .height(60.dp)
           .width(120.dp),
-          onClick = { /*TODO*/ }) {
+          onClick = {
+            val houseRepository = HouseViewModel(navController, context)
+
+            if (imageUri.value !=null){
+              houseRepository.saveHouse(
+                filepath = imageUri.value!!,
+                size = size,
+                price = price,
+                location = location,
+                phonenumber = phonenumber,
+                description = description
+              )
+              navController.navigate(ROUTE_VIEW_HOUSES)
+            }else{
+              Toast.makeText(context, "Please Select An Image", Toast.LENGTH_SHORT).show()
+            }
+          }) {
           Text(text = "Save")
         }
       }
@@ -216,5 +240,5 @@ Text(text = "Upload House Details",
 @Preview(showSystemUi = true, showBackground = true)
 @Composable
 fun UploadHousesPreview() {
-  UploadHouses()
+  UploadHouses(rememberNavController())
 }

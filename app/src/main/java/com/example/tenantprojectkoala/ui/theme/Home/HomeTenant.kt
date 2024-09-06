@@ -4,42 +4,42 @@ package com.example.tenantprojectkoala.ui.theme.Home
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.horizontalScroll
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.*
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.zIndex
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
-import coil.compose.rememberImagePainter
 import com.example.tenantprojectkoala.R
-import com.example.tenantprojectkoala.navigation.ROUTE_EDIT_HOUSE
 import com.example.tenantprojectkoala.navigation.ROUTE_HOME_MAIN
-import com.example.tenantprojectkoala.navigation.ROUTE_UPLOAD_HOUSE
 import com.example.tenantprojectkoala.navigation.ROUTE_VIEW_HOUSES
 
 
@@ -116,7 +116,7 @@ fun HomeTenant(navController: NavController) {
                 label = { Text(text = "Search for...") },
                 trailingIcon = {
                     Image(
-                        painter = painterResource(id = R.drawable.search_24),
+                        painter = painterResource(id = R.drawable.searchimg),
                         contentDescription = null,
                         modifier = Modifier
                             .size(43.dp)
@@ -177,18 +177,18 @@ fun HomeTenant(navController: NavController) {
                             ),
                             horizontalAlignment = Alignment.CenterHorizontally
                         ){
-                            Image(painter = painterResource(id = R.drawable.pageview_24),
+                            Image(painter = painterResource(id = R.drawable.viewhouse),
                                 contentDescription = null,
                                 modifier = Modifier
-                                    .padding(top = 3.dp,)
+                                    .padding(top = 3.dp)
                                     .size(50.dp)
                                     .clickable { navController.navigate(ROUTE_VIEW_HOUSES) }
                             )
-                            Text(text = "View Houses",
+                            Text(text = "ViewHouses",
                                 fontSize = 14.sp,
                                 fontWeight = FontWeight.Bold,
-                                fontStyle = FontStyle.Italic,
-                                color = Color.Magenta
+                                fontStyle = FontStyle.Normal,
+                                color = Color.Black
                             )
                         }
 
@@ -202,18 +202,18 @@ fun HomeTenant(navController: NavController) {
                             ),
                             horizontalAlignment = Alignment.CenterHorizontally
                         ){
-                            Image(painter = painterResource(id = R.drawable.upload_24),
+                            Image(painter = painterResource(id = R.drawable.favorite),
                                 contentDescription = null,
                                 modifier = Modifier
-                                    .padding(top = 3.dp,)
+                                    .padding(top = 3.dp)
                                     .size(50.dp)
                                     .clickable { }
                             )
-                            Text(text = "Upload ",
+                            Text(text = "Favorite ",
                                 fontSize = 14.sp,
                                 fontWeight = FontWeight.Bold,
-                                fontStyle = FontStyle.Italic,
-                                color = Color.Magenta
+                                fontStyle = FontStyle.Normal,
+                                color = Color.Black
                             )
                         }
 
@@ -227,10 +227,10 @@ fun HomeTenant(navController: NavController) {
                             ),
                             horizontalAlignment = Alignment.CenterHorizontally
                         ){
-                            Image(painter = painterResource(id = R.drawable.home_24),
+                            Image(painter = painterResource(id = R.drawable.home1),
                                 contentDescription = null,
                                 modifier = Modifier
-                                    .padding(top = 3.dp,)
+                                    .padding(top = 3.dp)
                                     .size(50.dp)
                                     .clickable { navController.navigate(ROUTE_HOME_MAIN) }
 
@@ -238,8 +238,8 @@ fun HomeTenant(navController: NavController) {
                             Text(text = "Home",
                                 fontSize = 14.sp,
                                 fontWeight = FontWeight.Bold,
-                                fontStyle = FontStyle.Italic,
-                                color = Color.Magenta
+                                fontStyle = FontStyle.Normal,
+                                color = Color.Black
                             )
                         }
                     }
@@ -254,17 +254,17 @@ fun HomeTenant(navController: NavController) {
                             ),
                             horizontalAlignment = Alignment.CenterHorizontally
                         ){
-                            Image(painter = painterResource(id = R.drawable.info_24),
+                            Image(painter = painterResource(id = R.drawable.info),
                                 contentDescription = null,
                                 modifier = Modifier
-                                    .padding(top = 3.dp,)
+                                    .padding(top = 3.dp)
                                     .size(50.dp)
                             )
                             Text(text = "Info",
                                 fontSize = 14.sp,
                                 fontWeight = FontWeight.Bold,
-                                fontStyle = FontStyle.Italic,
-                                color = Color.Magenta
+                                fontStyle = FontStyle.Normal,
+                                color = Color.Black
                             )
                         }
 
@@ -278,17 +278,17 @@ fun HomeTenant(navController: NavController) {
                             ),
                             horizontalAlignment = Alignment.CenterHorizontally
                         ){
-                            Image(painter = painterResource(id = R.drawable.problem_24),
+                            Image(painter = painterResource(id = R.drawable.profile1),
                                 contentDescription = null,
                                 modifier = Modifier
-                                    .padding(top = 3.dp,)
+                                    .padding(top = 3.dp)
                                     .size(50.dp)
                             )
-                            Text(text = "Problem ",
+                            Text(text = "Profile ",
                                 fontSize = 14.sp,
                                 fontWeight = FontWeight.Bold,
-                                fontStyle = FontStyle.Italic,
-                                color = Color.Magenta
+                                fontStyle = FontStyle.Normal,
+                                color = Color.Black
                             )
                         }
 
@@ -302,17 +302,17 @@ fun HomeTenant(navController: NavController) {
                             ),
                             horizontalAlignment = Alignment.CenterHorizontally
                         ){
-                            Image(painter = painterResource(id = R.drawable.logout_24),
+                            Image(painter = painterResource(id = R.drawable.settings),
                                 contentDescription = null,
                                 modifier = Modifier
-                                    .padding(top = 3.dp,)
+                                    .padding(top = 3.dp)
                                     .size(50.dp)
                             )
-                            Text(text = "Log Out",
+                            Text(text = "Settings",
                                 fontSize = 14.sp,
                                 fontWeight = FontWeight.Bold,
                                 fontStyle = FontStyle.Italic,
-                                color = Color.Magenta
+                                color = Color.Black
                             )
                         }
                     }
@@ -327,17 +327,17 @@ fun HomeTenant(navController: NavController) {
                             ),
                             horizontalAlignment = Alignment.CenterHorizontally
                         ){
-                            Image(painter = painterResource(id = R.drawable.edit_24),
+                            Image(painter = painterResource(id = R.drawable.measege),
                                 contentDescription = null,
                                 modifier = Modifier
-                                    .padding(top = 3.dp,)
+                                    .padding(top = 3.dp)
                                     .size(50.dp)
                             )
-                            Text(text = "Edit Houses",
+                            Text(text = "Messages",
                                 fontSize = 14.sp,
                                 fontWeight = FontWeight.Bold,
-                                fontStyle = FontStyle.Italic,
-                                color = Color.Magenta
+                                fontStyle = FontStyle.Normal,
+                                color = Color.Black
                             )
                         }
 
@@ -351,17 +351,17 @@ fun HomeTenant(navController: NavController) {
                             ),
                             horizontalAlignment = Alignment.CenterHorizontally
                         ){
-                            Image(painter = painterResource(id = R.drawable.upload_24),
+                            Image(painter = painterResource(id = R.drawable.notification1),
                                 contentDescription = null,
                                 modifier = Modifier
-                                    .padding(top = 3.dp,)
+                                    .padding(top = 3.dp)
                                     .size(50.dp)
                             )
-                            Text(text = "Upload ",
+                            Text(text = "Notification",
                                 fontSize = 14.sp,
                                 fontWeight = FontWeight.Bold,
-                                fontStyle = FontStyle.Italic,
-                                color = Color.Magenta
+                                fontStyle = FontStyle.Normal,
+                                color = Color.Black
                             )
                         }
 
@@ -375,17 +375,17 @@ fun HomeTenant(navController: NavController) {
                             ),
                             horizontalAlignment = Alignment.CenterHorizontally
                         ){
-                            Image(painter = painterResource(id = R.drawable.logout_24),
+                            Image(painter = painterResource(id = R.drawable.logout1),
                                 contentDescription = null,
                                 modifier = Modifier
-                                    .padding(top = 3.dp,)
+                                    .padding(top = 3.dp)
                                     .size(50.dp)
                             )
                             Text(text = "Log Out",
                                 fontSize = 14.sp,
                                 fontWeight = FontWeight.Bold,
                                 fontStyle = FontStyle.Italic,
-                                color = Color.Magenta
+                                color = Color.Black
                             )
                         }
                     }
